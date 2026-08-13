@@ -145,7 +145,7 @@
 
     /* ===== HERO ===== */
     .hero {
-        padding: 110px 40px 90px;
+        padding: 2em;
         max-width: 1180px;
         margin: 0 auto;
         display: grid;
@@ -252,7 +252,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 6px 0 40px;
     }
 
     .regmark svg {
@@ -261,7 +260,7 @@
 
     /* ===== SECTION HEADERS ===== */
     .section {
-        padding: 70px 40px;
+        padding: 2em;
         max-width: 1180px;
         margin: 0 auto;
     }
@@ -499,7 +498,7 @@
     footer {
         background: var(--ink);
         color: var(--paper);
-        padding: 80px 40px 40px;
+        padding: 3em;
     }
 
     .footer-in {
@@ -569,6 +568,13 @@
         flex-wrap: wrap;
         gap: 10px;
     }
+
+    @media(max-width:500px) {
+        .navlinks {
+            gap: .75em;
+        }
+    }
+
 
     @media(max-width:860px) {
         .hero {
