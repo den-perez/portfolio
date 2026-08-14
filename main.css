@@ -230,11 +230,18 @@
         border: 1.5px solid var(--ink);
         text-decoration: none;
         transition: background 0.15s, color 0.15s;
+        cursor: pointer;
     }
 
     .btn.solid {
-        background: var(--ink);
+        background: var(--steel);
         color: var(--paper);
+    }
+
+    .btn.solid2 {
+        background: var(--red);
+        color: var(--paper);
+        border-color: var(--red);
     }
 
     .btn.solid:hover {
@@ -242,10 +249,62 @@
         border-color: var(--red);
     }
 
+    .btn.solid2:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+    }
+
     .btn.outline:hover {
         background: var(--ink);
         color: var(--paper);
+        border-color: var(--ink);
     }
+
+    /* Hidden by default; covers the entire screen */
+    .overlay-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        /* Dimmed backdrop */
+        z-index: 9999;
+        /* Ensures it sits on top of everything */
+    }
+
+    /* Centered box inside the dimmed background */
+    .overlay-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 95%;
+        height: 95%;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+    }
+
+    /* Makes the iframe fill the modal space */
+    #overlayFrame,
+    #overlayFrame2 {
+        width: 100%;
+        height: inherit;
+        padding: 1.5em;
+    }
+
+    .close-btn {
+        width: 2em;
+        height: 2em;
+        margin: 1em;
+        border-radius: 1em;
+        border-color: #C8443C;
+        color: #C8443C;
+    }
+
 
     /* registration mark divider */
     .regmark {
@@ -544,6 +603,7 @@
         gap: 12px;
         border-bottom: 1px solid rgba(247, 244, 238, 0.25);
         padding-bottom: 14px;
+        cursor: pointer;
     }
 
     .contact-list a:hover {
