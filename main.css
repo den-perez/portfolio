@@ -112,6 +112,14 @@
         letter-spacing: 0.02em;
     }
 
+    #logo {
+        text-decoration: none;
+    }
+
+    #logo:hover {
+        text-decoration: underline;
+    }
+
     .logo span {
         color: var(--red);
     }
@@ -132,6 +140,7 @@
 
     .navlinks a:hover {
         color: var(--red);
+        text-decoration: underline;
     }
 
     .navlinks .lang-tag {
