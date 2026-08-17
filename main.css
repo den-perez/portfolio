@@ -112,6 +112,10 @@
         letter-spacing: 0.02em;
     }
 
+    .logo:hover {
+        scale: 1.1;
+    }
+
     #logo {
         text-decoration: none;
     }
@@ -141,6 +145,7 @@
     .navlinks a:hover {
         color: var(--red);
         text-decoration: underline;
+        scale: 1.1;
     }
 
     .navlinks .lang-tag {
@@ -248,25 +253,28 @@
     }
 
     .btn.solid2 {
-        background: var(--red);
+        background: var(--gold);
         color: var(--paper);
-        border-color: var(--red);
+        border-color: var(--gold);
     }
 
     .btn.solid:hover {
         background: var(--red);
         border-color: var(--red);
+        scale: 1.1;
     }
 
     .btn.solid2:hover {
-        background: var(--gold);
-        border-color: var(--gold);
+        background: var(--red);
+        border-color: var(--red);
+        scale: 1.1;
     }
 
     .btn.outline:hover {
         background: var(--ink);
         color: var(--paper);
         border-color: var(--ink);
+        scale: 1.1;
     }
 
     /* Hidden by default; covers the entire screen */
@@ -299,19 +307,28 @@
 
     /* Makes the iframe fill the modal space */
     #overlayFrame,
-    #overlayFrame2 {
+    #overlayFrame2,
+    #overlayFrameWF,
+    #overlayFrameCLB,
+    #overlayFrameRiot,
+    #overlayFrameFedEx,
+    #overlayFrameCVS {
         width: 100%;
-        height: inherit;
-        padding: 1.5em;
+        height: -webkit-fill-available;
+        padding: 2em;
     }
 
     .close-btn {
-        width: 2em;
-        height: 2em;
-        margin: 1em;
-        border-radius: 1em;
-        border-color: #C8443C;
-        color: #C8443C;
+        width: 3em;
+        height: 3em;
+        margin: .5em;
+        border-radius: 2em;
+        border-width: .1em;
+        position: absolute;
+    }
+
+    .close-btn:hover {
+        cursor: pointer;
     }
 
 
@@ -395,7 +412,19 @@
         padding: 5px 12px;
     }
 
+    .tags span:hover {
+        background-color: var(--ink);
+        color: var(--paper);
+    }
+
     /* ===== EXPERIENCE ===== */
+
+    .co {
+        text-decoration: underline;
+        cursor: pointer;
+        width: fit-content;
+    }
+
     .co_logo {
         height: 2em;
         vertical-align: middle;
