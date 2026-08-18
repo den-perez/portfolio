@@ -307,12 +307,7 @@
 
     /* Makes the iframe fill the modal space */
     #overlayFrame,
-    #overlayFrame2,
-    #overlayFrameWF,
-    #overlayFrameCLB,
-    #overlayFrameRiot,
-    #overlayFrameFedEx,
-    #overlayFrameCVS {
+    #overlayFrame2 {
         width: 100%;
         height: -webkit-fill-available;
         padding: 2em;
@@ -418,12 +413,6 @@
     }
 
     /* ===== EXPERIENCE ===== */
-
-    .co {
-        text-decoration: underline;
-        cursor: pointer;
-        width: fit-content;
-    }
 
     .co_logo {
         height: 2em;
