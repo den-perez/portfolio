@@ -520,9 +520,15 @@
         opacity: 0.85;
     }
 
+    .piece-images {
+        white-space: nowrap;
+        overflow: auto;
+    }
+
     .piece img {
-        width: 100%;
-        display: block;
+        height: 55em;
+        margin-right: 3em;
+        display: inline;
         border: 1px solid var(--line-strong);
     }
 
