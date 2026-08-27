@@ -709,4 +709,9 @@
             padding-left: 22px;
             padding-right: 22px;
         }
+
+        .piece img {
+            height: 40em;
+        }
+
     }
