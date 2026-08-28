@@ -533,7 +533,7 @@
 
     /* ===== VIDEO ===== */
     .video-grid {
-        display: grid;
+        display: flex;
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
