@@ -513,7 +513,6 @@
     }
 
     .piece p.desc {
-        max-width: 75ch;
         margin-bottom: 18px;
         font-size: 15.5px;
         color: var(--ink);
@@ -526,8 +525,8 @@
     }
 
     .piece img {
-        height: 55em;
-        margin-right: 3em;
+        height: 35em;
+        margin: 0 1em 0 1em;
         display: inline;
         border: 1px solid var(--line-strong);
     }
@@ -711,7 +710,7 @@
         }
 
         .piece img {
-            height: 40em;
+            height: 25em;
         }
 
     }
