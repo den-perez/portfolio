@@ -547,6 +547,7 @@
         margin: auto;
         white-space: nowrap;
         overflow: auto;
+        padding-bottom: 1em;
     }
 
     .piece img {
@@ -554,6 +555,7 @@
         margin: 0 1em 0 1em;
         display: inline;
         border: 1px solid var(--line-strong);
+        box-shadow: .25em .25em .5em;
     }
 
     /* ===== VIDEO ===== */
@@ -580,6 +582,7 @@
 
     .video-card {
         border: 1px solid var(--line-strong);
+        box-shadow: .25em .25em .9em;
     }
 
     .video-embed {
