@@ -345,16 +345,6 @@
         margin: 0 auto;
     }
 
-    #work {
-        max-width: 100%;
-    }
-
-    #work .section-head {
-        max-width: 1180px;
-        margin: auto;
-        margin-bottom: 44px;
-    }
-
     .section-head {
         display: flex;
         justify-content: space-between;
@@ -372,6 +362,18 @@
         font-family: 'JetBrains Mono', monospace;
         font-size: 13px;
         color: var(--steel);
+    }
+
+    #work .section-head {
+        max-width: 1180px;
+        margin: auto;
+        margin-bottom: 44px;
+    }
+
+    #video .section-head {
+        max-width: 1180px;
+        margin: auto;
+        margin-bottom: 44px;
     }
 
     /* ===== ABOUT ===== */
@@ -472,6 +474,11 @@
     }
 
     /* ===== PORTFOLIO ===== */
+
+    #work {
+        max-width: 100%;
+    }
+
     .filter-row {
         display: flex;
         gap: 10px;
@@ -500,7 +507,7 @@
     }
 
     .piece {
-        margin-bottom: 70px;
+        margin-bottom: 2em;
     }
 
     .piece-head {
@@ -550,10 +557,25 @@
     }
 
     /* ===== VIDEO ===== */
+
+    #video {
+        max-width: 100%;
+    }
+
+    #video p.desc {
+        max-width: 1180px;
+        margin: auto;
+        margin-bottom: 18px;
+        font-size: 15.5px;
+        color: var(--ink);
+        opacity: 0.85;
+    }
+
     .video-grid {
         display: flex;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        gap: 2em;
+        margin-bottom: 1em;
+
     }
 
     .video-card {
