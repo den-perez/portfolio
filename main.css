@@ -1043,10 +1043,6 @@
             padding-right: 22px;
         }
 
-        .piece img {
-            height: 25em;
-        }
-
     }
 
     .skip-link {
@@ -1075,7 +1071,6 @@
     }
 
     .piece-images:not(.video-grid) {
-        margin-inline: max(-2rem, calc((1180px - 100vw) / 2));
         padding-inline: max(2rem, calc((100vw - 1180px) / 2));
         display: block;
         overflow: visible;
@@ -1097,6 +1092,7 @@
 
         .piece-images:not(.video-grid) {
             columns: 2;
+            margin:auto;
         }
     }
 
@@ -1205,12 +1201,6 @@
 
         .job {
             padding: 24px 0;
-        }
-
-        .piece-images:not(.video-grid) {
-            margin-inline: -22px;
-            padding-inline: 22px;
-            columns: 1;
         }
 
         footer {
