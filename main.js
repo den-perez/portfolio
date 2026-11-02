@@ -65,6 +65,34 @@ imageViewer?.addEventListener('keydown', event => {
     }
 });
 
+let swipeStart = null;
+
+imageViewerImage?.addEventListener('pointerdown', event => {
+    if (event.pointerType !== 'touch' || !event.isPrimary) return;
+
+    swipeStart = { x: event.clientX, y: event.clientY, pointerId: event.pointerId };
+});
+
+imageViewerImage?.addEventListener('pointerup', event => {
+    if (!swipeStart || event.pointerId !== swipeStart.pointerId) return;
+
+    const deltaX = event.clientX - swipeStart.x;
+    const deltaY = event.clientY - swipeStart.y;
+    swipeStart = null;
+
+    if (Math.abs(deltaX) < 48 || Math.abs(deltaX) < Math.abs(deltaY) * 1.25) return;
+
+    if (deltaX < 0) {
+        imageViewerNext?.click();
+    } else {
+        imageViewerPrevious?.click();
+    }
+});
+
+imageViewerImage?.addEventListener('pointercancel', () => {
+    swipeStart = null;
+});
+
 imageViewer?.addEventListener('click', event => {
     if (event.target === imageViewer) imageViewer.close();
 });
