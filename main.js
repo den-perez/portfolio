@@ -18,7 +18,7 @@ const imageViewerNext = imageViewer?.querySelector('.image-viewer-next');
 let currentGallery = [];
 let currentGalleryIndex = 0;
 
-function showGalleryImage(index) {
+function showGalleryImage(index, direction = 0) {
     const button = currentGallery[index];
     const image = button?.querySelector('img');
     if (!image || !imageViewerImage || !imageViewerCaption || !imageViewerCount) return;
@@ -28,6 +28,20 @@ function showGalleryImage(index) {
     imageViewerImage.alt = image.alt;
     imageViewerCaption.textContent = image.alt;
     imageViewerCount.textContent = `${index + 1} / ${currentGallery.length}`;
+
+    imageViewerImage.classList.remove(
+        'image-viewer-image--enter-from-left',
+        'image-viewer-image--enter-from-right'
+    );
+
+    if (direction !== 0) {
+        void imageViewerImage.offsetWidth;
+        imageViewerImage.classList.add(
+            direction > 0
+                ? 'image-viewer-image--enter-from-right'
+                : 'image-viewer-image--enter-from-left'
+        );
+    }
 }
 
 document.querySelectorAll('.gallery-item').forEach(button => {
@@ -47,12 +61,12 @@ document.querySelectorAll('.gallery-item').forEach(button => {
 
 imageViewerPrevious?.addEventListener('click', () => {
     if (!currentGallery.length) return;
-    showGalleryImage((currentGalleryIndex - 1 + currentGallery.length) % currentGallery.length);
+    showGalleryImage((currentGalleryIndex - 1 + currentGallery.length) % currentGallery.length, -1);
 });
 
 imageViewerNext?.addEventListener('click', () => {
     if (!currentGallery.length) return;
-    showGalleryImage((currentGalleryIndex + 1) % currentGallery.length);
+    showGalleryImage((currentGalleryIndex + 1) % currentGallery.length, 1);
 });
 
 imageViewer?.addEventListener('keydown', event => {
