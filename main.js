@@ -24,7 +24,7 @@ function showGalleryImage(index, direction = 0) {
     if (!image || !imageViewerImage || !imageViewerCaption || !imageViewerCount) return;
 
     currentGalleryIndex = index;
-    imageViewerImage.src = image.currentSrc || image.src;
+    imageViewerImage.src = image.dataset.full || image.currentSrc || image.src;
     imageViewerImage.alt = image.alt;
     imageViewerCaption.textContent = image.alt;
     imageViewerCount.textContent = `${index + 1} / ${currentGallery.length}`;
