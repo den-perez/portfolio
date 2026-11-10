@@ -118,7 +118,7 @@ const videoViewerTitle = videoViewer?.querySelector('.video-viewer-title');
 document.querySelectorAll('.video-play-button').forEach(button => {
     button.addEventListener('click', () => {
         const videoId = button.dataset.videoId;
-        const title = button.closest('.video-card')?.querySelector('.video-meta h4')?.textContent.trim();
+        const title = button.closest('.video-card')?.querySelector('.video-meta h3')?.textContent.trim();
         if (!videoViewer || !videoPlayer || !videoViewerTitle || !videoId || !title) return;
 
         videoViewerTitle.textContent = title;
