@@ -24,7 +24,7 @@ function showGalleryImage(index, direction = 0) {
     if (!image || !imageViewerImage || !imageViewerCaption || !imageViewerCount) return;
 
     currentGalleryIndex = index;
-    imageViewerImage.src = image.currentSrc || image.src;
+    imageViewerImage.src = image.dataset.full || image.currentSrc || image.src;
     imageViewerImage.alt = image.alt;
     imageViewerCaption.textContent = image.alt;
     imageViewerCount.textContent = `${index + 1} / ${currentGallery.length}`;
@@ -118,7 +118,7 @@ const videoViewerTitle = videoViewer?.querySelector('.video-viewer-title');
 document.querySelectorAll('.video-play-button').forEach(button => {
     button.addEventListener('click', () => {
         const videoId = button.dataset.videoId;
-        const title = button.closest('.video-card')?.querySelector('.video-meta h4')?.textContent.trim();
+        const title = button.closest('.video-card')?.querySelector('.video-meta h3')?.textContent.trim();
         if (!videoViewer || !videoPlayer || !videoViewerTitle || !videoId || !title) return;
 
         videoViewerTitle.textContent = title;
