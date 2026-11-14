@@ -16,7 +16,7 @@
     --retail: #B59CF5;
     --playhead: #FF5A4F;
 
-    --display: 'Syne', 'Arial Black', sans-serif;
+    --display: 'Archivo', 'Arial Black', sans-serif;
     --sans: 'DM Sans', system-ui, sans-serif;
     --mono: 'DM Mono', ui-monospace, monospace;
 
@@ -59,6 +59,7 @@ h1,
 h2,
 h3 {
     font-family: var(--display);
+    font-stretch: 125%;
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.02em;
@@ -136,6 +137,7 @@ header {
 
 .logo {
     font-family: var(--display);
+    font-stretch: 125%;
     font-weight: 700;
     font-size: 18px;
     letter-spacing: -0.01em;
@@ -240,7 +242,7 @@ header {
 
 .title {
     position: relative;
-    font-size: clamp(2.15rem, 7.6vw, 6.4rem);
+    font-size: clamp(2.4rem, 8.8vw, 7.4rem);
     font-weight: 800;
     line-height: 1.02;
     letter-spacing: -0.04em;
@@ -453,7 +455,7 @@ header {
 
 .section-head h2,
 footer h2 {
-    font-size: clamp(2.6rem, 7.2vw, 5.75rem);
+    font-size: clamp(2.8rem, 8vw, 6.5rem);
     font-weight: 800;
     line-height: 1;
     letter-spacing: -0.045em;
@@ -1051,7 +1053,7 @@ footer {
 }
 
 footer h2 {
-    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    font-size: clamp(2.6rem, 6.2vw, 5.6rem);
     margin-bottom: 26px;
 }
 
@@ -1081,6 +1083,7 @@ footer .lede {
     background: transparent;
     color: var(--text);
     font: 700 clamp(21px, 2.6vw, 33px)/1.15 var(--display);
+    font-stretch: 125%;
     letter-spacing: -0.03em;
     text-align: left;
     text-decoration: none;
@@ -1543,7 +1546,7 @@ footer .lede {
     }
 
     footer h2 {
-        font-size: 8vw;
+        font-size: 10vw;
     }
 
     .wave {
@@ -1571,15 +1574,15 @@ footer .lede {
     }
 
     .title {
-        font-size: 8.6vw;
+        font-size: 10.8vw;
     }
 
     .section-head h2 {
-        font-size: 9.6vw;
+        font-size: 12vw;
     }
 
     footer h2 {
-        font-size: 10.4vw;
+        font-size: 12vw;
     }
 
     .hud {
