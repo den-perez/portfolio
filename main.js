@@ -190,9 +190,38 @@ if (experience && timeline && clips.length) {
         clip.title = clip.getAttribute('aria-label');
         clip.addEventListener('click', () => selectClip(clip));
     });
-    selectClip(clips.find(clip => clip.getAttribute('aria-controls') === 'job-wells-fargo') ?? clips[0]);
-    // start scrolled to the present on narrow screens
+    selectClip(clips.find(clip => clip.getAttribute('aria-controls') === 'job-urcc') ?? clips[0]);
+    // start scrolled to the present on narrow screens; with animation on, followPlayhead() takes over
     timeline.scrollLeft = timeline.scrollWidth;
+}
+
+// On narrow screens the timeline scrolls sideways. While the playhead runs from 2002 to now,
+// scroll along with it so the build is visible, and finish at the present.
+function followPlayhead() {
+    const playhead = timeline?.querySelector('.tl-playhead');
+    if (!timeline || !playhead) return;
+
+    const maxScroll = () => timeline.scrollWidth - timeline.clientWidth;
+    if (maxScroll() <= 0) return;
+
+    let following = true;
+    const stop = () => { following = false; };
+    ['pointerdown', 'touchstart', 'wheel'].forEach(type => timeline.addEventListener(type, stop, { once: true, passive: true }));
+
+    const started = performance.now();
+    const step = now => {
+        if (!following) return;
+        // keep the playhead about three quarters of the way across the visible part
+        const target = playhead.offsetLeft - timeline.clientWidth * 0.75;
+        timeline.scrollLeft = Math.min(maxScroll(), Math.max(0, target));
+
+        if (now - started < 2200) {
+            requestAnimationFrame(step);
+        } else {
+            timeline.scrollLeft = maxScroll();
+        }
+    };
+    requestAnimationFrame(step);
 }
 
 // Transport bar: scrolling scrubs the playhead across the page's sections.
@@ -263,6 +292,7 @@ if (heroClock && !reduceMotion) {
 // Scroll-in animation: headings wipe in, frames and cards arrive in sequence, the career timeline builds.
 if (!reduceMotion && 'IntersectionObserver' in window) {
     document.documentElement.classList.add('anim');
+    if (timeline) timeline.scrollLeft = 0;
 
     const groups = document.querySelectorAll('.rail, .video-grid, .skills-col, .contact-list');
     groups.forEach(group => [...group.children].forEach((child, i) => child.style.setProperty('--i', i)));
@@ -272,6 +302,7 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
             if (!entry.isIntersecting) return;
             entry.target.classList.add('in');
             observer.unobserve(entry.target);
+            if (entry.target === timeline) followPlayhead();
         });
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
 
