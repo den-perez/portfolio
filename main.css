@@ -645,15 +645,6 @@ p.desc {
     min-width: 0;
 }
 
-.video-card--feature {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
-    gap: clamp(18px, 3vw, 44px);
-    align-items: end;
-    padding-bottom: clamp(26px, 3vw, 40px);
-    border-bottom: 1px solid var(--line);
-}
 
 .video-embed {
     position: relative;
@@ -726,11 +717,6 @@ p.desc {
     transition: transform 0.2s var(--ease);
 }
 
-.video-card--feature .video-play-icon {
-    width: 86px;
-    height: 86px;
-    font-size: 27px;
-}
 
 .video-play-button:hover .video-play-icon {
     transform: scale(1.12);
@@ -752,16 +738,7 @@ p.desc {
     color: var(--muted);
 }
 
-.video-card--feature .video-meta h3 {
-    font-size: clamp(26px, 3.1vw, 42px);
-    letter-spacing: -0.03em;
-    margin-bottom: 12px;
-    text-wrap: balance;
-}
 
-.video-card--feature .video-meta p {
-    font-size: 17px;
-}
 
 /* ===== ABOUT ===== */
 .about-grid {
@@ -1547,15 +1524,11 @@ footer .lede {
     .hero-body,
     .about-grid,
     .footer-top,
-    .video-card--feature,
     .piece,
     .job {
         grid-template-columns: 1fr;
     }
 
-    .video-card--feature {
-        gap: 0;
-    }
 
     .piece {
         gap: 20px;
@@ -1655,11 +1628,6 @@ footer .lede {
         font-size: 14px;
     }
 
-    .video-card--feature .video-play-icon {
-        width: 62px;
-        height: 62px;
-        font-size: 21px;
-    }
 
     .contact-list a,
     .contact-list .resume-contact-link {
