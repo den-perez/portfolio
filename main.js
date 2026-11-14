@@ -1,14 +1,3 @@
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const f = btn.dataset.filter;
-        document.querySelectorAll('.piece').forEach(p => {
-            p.style.display = (f === 'all' || p.dataset.cat === f) ? '' : 'none';
-        });
-    });
-});
-
 const imageViewer = document.querySelector('.image-viewer');
 const imageViewerImage = imageViewer?.querySelector('.image-viewer-image');
 const imageViewerCaption = imageViewer?.querySelector('.image-viewer-caption');
@@ -144,3 +133,48 @@ document.querySelectorAll('[data-open-resume]').forEach(button => {
 resumeViewer?.addEventListener('click', event => {
     if (event.target === resumeViewer) resumeViewer.close();
 });
+
+// Work rails: arrow buttons scroll the row of images beside them.
+document.querySelectorAll('.piece').forEach(piece => {
+    const rail = piece.querySelector('.rail');
+    const buttons = [...piece.querySelectorAll('.rail-btn')];
+    if (!rail || !buttons.length) return;
+
+    const title = piece.querySelector('h3')?.textContent.trim();
+    if (title) rail.setAttribute('aria-label', `Images: ${title}`);
+
+    const update = () => {
+        const max = rail.scrollWidth - rail.clientWidth - 2;
+        buttons.forEach(button => {
+            button.disabled = Number(button.dataset.rail) < 0 ? rail.scrollLeft <= 2 : rail.scrollLeft >= max;
+        });
+    };
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            rail.scrollBy({ left: Number(button.dataset.rail) * rail.clientWidth * 0.8, behavior: 'smooth' });
+        });
+    });
+
+    rail.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    update();
+});
+
+// Hero headline: the magenta and yellow plates drift slightly out of register with the pointer.
+const overprint = document.querySelector('.overprint');
+const hero = document.querySelector('.hero');
+
+if (overprint && hero && matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) {
+    hero.addEventListener('pointermove', event => {
+        const box = hero.getBoundingClientRect();
+        overprint.style.setProperty('--px', ((event.clientX - box.left) / box.width * 2 - 1).toFixed(3));
+        overprint.style.setProperty('--py', ((event.clientY - box.top) / box.height * 2 - 1).toFixed(3));
+    });
+
+    hero.addEventListener('pointerleave', () => {
+        overprint.style.setProperty('--px', 0);
+        overprint.style.setProperty('--py', 0);
+    });
+}

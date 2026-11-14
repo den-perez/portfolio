@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,500..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="main.css">
   <script src="main.js" defer>
@@ -27,7 +27,7 @@
 
   <header>
     <div class="nav">
-      <div class="logo"><a id="logo" href="#">DENNIS<span>·</span>PEREZ</a></div>
+      <div class="logo"><a id="logo" href="#">Dennis Perez</a></div>
       <nav class="navlinks" aria-label="Main navigation">
         <a href="#work">Work</a>
         <a href="#video">Video</a>
@@ -38,77 +38,64 @@
     </div>
   </header>
 
-    <main id="main">
+      <main id="main">
   <section class="hero">
-    <div class="ticket">
-      <span>NO. 001</span>
-      <span>HOUSTON, TX</span>
-      <span>PRINT — WEB — VIDEO</span>
-    </div>
-    <h1>Production is <em>craft</em>,<br> not a formality.</h1>
+    <h1 class="overprint">
+      <span class="line" data-text="Production">Production </span>
+      <span class="line" data-text="is craft, not">is craft, not </span>
+      <span class="line" data-text="a formality.">a formality.</span>
+    </h1>
     <div class="hero-body">
       <div class="hero-copy">
         <p class="lede">Dennis Perez is a bilingual production specialist who builds the full pipeline — from press proof
           to pixel — across print, web, and video for corporate and independent clients across Houston.</p>
         <div class="cta-row">
           <a href="#work" class="btn primary">View the work</a>
-          <button class="btn quiet" type="button" data-open-resume>My Resume</button>
+          <button class="btn quiet" type="button" data-open-resume>Open my resume</button>
           <a href="#contact" class="btn quiet">Get in touch</a>
         </div>
-        <div class="hero-facts">
-          <div class="role">Digital Production &amp; Web Specialist</div>
-          <div class="place">B.A. Communication — Media Production,<br> University of Houston</div>
-        </div>
       </div>
-      <div class="proofs" aria-hidden="true">
-        <figure class="proof proof-1"><img src="images/hero/rapidzoom.webp" alt="" width="720" height="936"></figure>
-        <figure class="proof proof-2"><img src="images/hero/estevan.webp" alt="" width="720" height="932"></figure>
-        <figure class="proof proof-3"><img src="images/hero/kookers.webp" alt="" width="720" height="900"></figure>
-      </div>
-    </div>
-    <div class="colorbar" aria-hidden="true">
-      <span class="swatches"><i style="background:#00AEEF"></i><i style="background:#EC008C"></i><i style="background:#FFF200"></i><i style="background:#1A1D29"></i><i style="background:#7FD6F7"></i><i style="background:#F57FC5"></i><i style="background:#FFF87F"></i><i style="background:#8C8E94"></i><i style="background:#ED1C24"></i><i style="background:#00A651"></i><i style="background:#2E3192"></i><i style="background:#C6C7CA"></i><i style="background:#E3E3E5"></i></span>
-      <svg width="26" height="26" viewBox="0 0 34 34">
-        <circle cx="17" cy="17" r="11" fill="none" stroke="currentColor" stroke-width="1.2" />
-        <line x1="17" y1="0" x2="17" y2="34" stroke="currentColor" stroke-width="1.2" />
-        <line x1="0" y1="17" x2="34" y2="17" stroke="currentColor" stroke-width="1.2" />
-      </svg>
+      <dl class="hero-facts">
+        <div><dt>Role</dt><dd>Digital Production &amp; Web Specialist</dd></div>
+        <div><dt>Based in</dt><dd>Houston, Texas</dd></div>
+        <div><dt>Education</dt><dd>B.A. Communication, Media Production — University of Houston</dd></div>
+        <div><dt>Languages</dt><dd>English, Español</dd></div>
+      </dl>
     </div>
   </section>
 
-<section class="section band-ink" id="work">
+<section class="section" id="work">
     <div class="section-head">
       <h2>Work</h2>
     </div>
 
-    <div class="filter-row">
-      <button class="filter-btn active" type="button" data-filter="all">All</button>
-      <button class="filter-btn" type="button" data-filter="corp">Corporate web &amp; product</button>
-      <button class="filter-btn" type="button" data-filter="personal">Personal &amp; event design</button>
-      <button class="filter-btn" type="button" data-filter="client">Client marketing collateral</button>
-    </div>
-
-    <div class="piece" data-cat="corp">
+    <div class="piece plate-c" data-cat="corp">
+      <div class="piece-intro">
       <div class="piece-head">
-        <h3><span class="job-no mono">Job 01</span>RAPIDZoom &amp; RAPID platform — Core Laboratories</h3>
-        <span class="piece-tag mono">WEB — UI — MARKETING</span>
+        <h3>RAPIDZoom &amp; RAPID platform — Core Laboratories</h3>
+        <p class="piece-tag">Web, UI, marketing</p>
       </div>
       <p class="desc"><a target="_blank" href="https://rzdemo.corelab.com/home">Landing pages</a>, ultra-high-resolution
         image viewer,
         and dashboard design for Core Lab's RAPID
         reservoir-data platform, alongside supporting marketing pieces.
       </p>
-      <div class="piece-images">
-        <button class="gallery-item gallery-item--feature" type="button">
+      <div class="rail-nav">
+        <button type="button" class="rail-btn" data-rail="-1" aria-label="Scroll images left"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 18 9 12l6-6" /></svg></button>
+        <button type="button" class="rail-btn" data-rail="1" aria-label="Scroll images right"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg></button>
+      </div>
+      </div>
+      <div class="piece-images rail" tabindex="0" role="group" aria-label="Project images">
+        <button class="gallery-item" type="button">
           <img src="images/work/thumb/rapidzoon.webp" data-full="images/work/full/rapidzoon.webp" width="1050" height="2435" alt="RAPIDZoom landing page" decoding="async">
         </button>
-        <button class="gallery-item gallery-item--wide" type="button">
+        <button class="gallery-item" type="button">
           <img src="images/work/thumb/rzoom-icons.webp" data-full="images/work/full/rzoom-icons.webp" width="1022" height="853" alt="RAPIDZoom icon design" loading="lazy" decoding="async">
         </button>
-        <button class="gallery-item gallery-item--wide" type="button">
+        <button class="gallery-item" type="button">
           <img src="images/work/thumb/rapid-dash.webp" data-full="images/work/full/rapid-dash.webp" width="500" height="337" alt="RAPIDZoom dashboard design" loading="lazy" decoding="async">
         </button>
-        <button class="gallery-item gallery-item--wide" type="button">
+        <button class="gallery-item" type="button">
           <img src="images/work/thumb/tutorial-videos.webp" data-full="images/work/full/tutorial-videos.webp" width="982" height="831" alt="RAPIDZoom tutorial videos" loading="lazy" decoding="async">
         </button>
         <button class="gallery-item" type="button">
@@ -120,24 +107,30 @@
       </div>
     </div>
 
-    <div class="piece" data-cat="personal">
+    <div class="piece plate-m" data-cat="personal">
+      <div class="piece-intro">
       <div class="piece-head">
-        <h3><span class="job-no mono">Job 02</span>Event, milestone &amp; personal brand design</h3>
-        <span class="piece-tag mono">PRINT — INVITATIONS — BRANDING</span>
+        <h3>Event, milestone &amp; personal brand design</h3>
+        <p class="piece-tag">Print, invitations, branding</p>
       </div>
       <p class="desc">Invitation suites, save-the-dates, and logo brand identity, designed for family and
         community milestones — from a baby's first birthday to a fifty-year anniversary.</p>
-      <div class="piece-images">
-        <button class="gallery-item gallery-item--feature" type="button">
+      <div class="rail-nav">
+        <button type="button" class="rail-btn" data-rail="-1" aria-label="Scroll images left"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 18 9 12l6-6" /></svg></button>
+        <button type="button" class="rail-btn" data-rail="1" aria-label="Scroll images right"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg></button>
+      </div>
+      </div>
+      <div class="piece-images rail" tabindex="0" role="group" aria-label="Project images">
+        <button class="gallery-item" type="button">
           <img src="images/work/thumb/87Kookers.webp" data-full="images/work/full/87Kookers.webp" width="1000" height="1250" alt="87 Kookers event ad" decoding="async">
         </button>
-        <button class="gallery-item gallery-item--fit" type="button">
+        <button class="gallery-item" type="button">
           <img src="images/work/thumb/petals_logo.webp" data-full="images/work/full/petals_logo.webp" width="552" height="726" alt="PETALS logo design" loading="lazy" decoding="async">
         </button>
-        <button class="gallery-item gallery-item--fit" type="button">
+        <button class="gallery-item" type="button">
           <img src="images/work/thumb/krisv_logo.webp" data-full="images/work/full/krisv_logo.webp" width="640" height="400" alt="KRIS-V logo design" loading="lazy" decoding="async">
         </button>
-        <button class="gallery-item gallery-item--fit" type="button">
+        <button class="gallery-item" type="button">
           <img src="images/work/thumb/reality-change.webp" data-full="images/work/full/reality-change.webp" width="640" height="577" alt="Reality Change logo" loading="lazy" decoding="async">
         </button>
         <button class="gallery-item" type="button">
@@ -158,23 +151,29 @@
       </div>
     </div>
 
-    <div class="piece" data-cat="client">
+    <div class="piece plate-y" data-cat="client">
+      <div class="piece-intro">
       <div class="piece-head">
-        <h3><span class="job-no mono">Job 03</span>Local business &amp; equipment marketing</h3>
-        <span class="piece-tag mono">PRINT — CAMPAIGN — VEHICLE WRAP</span>
+        <h3>Local business &amp; equipment marketing</h3>
+        <p class="piece-tag">Print, campaign, vehicle wrap</p>
       </div>
       <p class="desc">Google Workspace admin and web developer for <a target="_blank"
           href="https://unitedrcc.com">United
           Rehabilitation &amp;
-          Chiropractor Clinic</a>, a multi-location Houston chiropractic practice. Produced Marketing material,
+          Chiropractor Clinic</a>, a multi-location Houston chiropractic practice. Produced marketing material,
         location maps, business cards, and a vehicle wrap concept. Samples of advertising for equipment and legal
         services.
       </p>
-      <div class="piece-images">
-        <button class="gallery-item gallery-item--feature" type="button">
+      <div class="rail-nav">
+        <button type="button" class="rail-btn" data-rail="-1" aria-label="Scroll images left"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 18 9 12l6-6" /></svg></button>
+        <button type="button" class="rail-btn" data-rail="1" aria-label="Scroll images right"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg></button>
+      </div>
+      </div>
+      <div class="piece-images rail" tabindex="0" role="group" aria-label="Project images">
+        <button class="gallery-item" type="button">
           <img src="images/work/thumb/mask_drive.webp" data-full="images/work/full/mask_drive.webp" width="1280" height="1978" alt="Mask drive event flyer" decoding="async">
         </button>
-        <button class="gallery-item gallery-item--wide" type="button">
+        <button class="gallery-item" type="button">
           <img src="images/work/thumb/Trax_24.webp" data-full="images/work/full/Trax_24.webp" width="1280" height="841" alt="2024 Trax car wrap design" loading="lazy" decoding="async">
         </button>
         <button class="gallery-item" type="button">
@@ -200,7 +199,7 @@
 
   </section>
 
-<section class="section" id="video">
+<section class="section band-k" id="video">
     <div class="section-head">
       <h2>Video</h2>
     </div>
@@ -330,7 +329,7 @@
     </div>-->
   </section>
 
-<section class="section band-tint" id="about">
+<section class="section band-y" id="about">
     <div class="section-head">
       <h2>About</h2>
     </div>
@@ -572,12 +571,12 @@
     </object>
   </dialog>
 
-  <footer id="contact">
+  <footer id="contact" class="band-c">
     <div class="footer-in">
       <div class="footer-top">
         <div>
           <h2>Let's build<br>something.</h2>
-          <p class="lede">Looking to lead multimedia and communications production — full-time or freelance - across
+          <p class="lede">Looking to lead multimedia and communications production — full-time or freelance — across
             Houston. Print, web, or camera in hand.</p>
         </div>
         <div class="contact-list">
@@ -589,8 +588,8 @@
         </div>
       </div>
       <div class="bottom-row">
-        <span>DENNIS PEREZ — PRODUCTION</span>
-        <span>HOUSTON, TX</span>
+        <span>Dennis Perez — Production</span>
+        <span>Houston, Texas</span>
       </div>
     </div>
   </footer>
