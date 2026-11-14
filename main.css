@@ -1239,13 +1239,13 @@ footer .lede {
 /* ===== SCROLL-IN ANIMATION (only when main.js adds .anim to <html>) ===== */
 .anim .section-head h2,
 .anim footer h2 {
-    clip-path: inset(-0.2em 100% -0.2em 0);
+    clip-path: inset(-0.5em 100% -0.5em 0);
     transition: clip-path 1s var(--ease);
 }
 
 .anim .section-head.in h2,
 .anim .footer-top.in h2 {
-    clip-path: inset(-0.2em 0 -0.2em 0);
+    clip-path: inset(-0.5em -1em -0.5em 0);
 }
 
 .anim .rail .gallery-item,
@@ -1575,7 +1575,7 @@ footer .lede {
     }
 
     .section-head h2 {
-        font-size: 11vw;
+        font-size: 9.6vw;
     }
 
     footer h2 {
