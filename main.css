@@ -414,15 +414,6 @@ header {
     transform: translateY(-2px);
 }
 
-.btn.quiet {
-    padding: 12px 22px;
-    border: 1px solid var(--line);
-}
-
-.btn.quiet:hover {
-    background: var(--panel-2);
-    border-color: var(--muted);
-}
 
 .hero-facts {
     border-top: 1px solid var(--line);
